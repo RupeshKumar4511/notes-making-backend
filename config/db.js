@@ -1,6 +1,8 @@
 import mongoose from 'mongoose'
+import {config} from 'dotenv'
+config();
 
-const connection = await mongoose.connect('mongodb://localhost:27017/Assignment').then(()=>{
+const connection = await mongoose.connect(process.env.MONGODB_URL).then(()=>{
     console.log("Database Connected Successfully")
 }).catch((err)=>console.log(err))
 
