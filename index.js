@@ -3,12 +3,8 @@ import connection from './config/db.js';
 import {config} from 'dotenv';
 config()
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
-if (!PORT) {
-  throw new Error("PORT is not defined by Railway")
-}
-
-app.listen(PORT, ()=>{
+app.listen(PORT, "0.0.0.0", ()=>{
     console.log(`Server is listening on port ${PORT}`)
 })
